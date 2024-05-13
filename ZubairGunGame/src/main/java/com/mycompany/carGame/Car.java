@@ -9,13 +9,28 @@ package com.mycompany.carGame;
  * @author zaina
  */
 public abstract class Car {
-    public abstract void accelerate();
-    public abstract void turnRight ();
-    public abstract void turnLeft ();
-    public abstract void reverse ();
-    public abstract void brake ();
-
-    void setCarState(DriveState driveState) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private CarState carState;
+    
+    public Car() {
+        this.carState = new StopState(this);
+    }
+    public void setCarState(CarState carState) {
+        this.carState = carState;
+    }
+    
+    public void accelerate(){
+        carState.accelerate();
+    }
+    public void turnRight(){
+        carState.turnRight();
+    }
+    public void turnLeft(){
+        carState.turnLeft();
+    }
+    public void reverse(){
+        carState.reverse();
+    }
+    public void brake(){
+        carState.brake();
     }
 }

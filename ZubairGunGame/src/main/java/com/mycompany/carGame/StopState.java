@@ -8,11 +8,11 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
-public class StopState extends Car {
-    private Car car;
+public class StopState extends CarState {
+    
     
     public StopState(Car car) {
-        this.car = car;
+        super(car);
     }
     
     @Override

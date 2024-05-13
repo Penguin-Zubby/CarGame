@@ -5,11 +5,10 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
-public class DriveState extends Car {
-    private Car car;
+public class DriveState extends CarState {
     
     public DriveState(Car car) {
-        this.car = car;
+        super(car);
     }
     
     @Override
@@ -21,7 +20,8 @@ public class DriveState extends Car {
     public void turnRight() {
         System.out.println("Car is turning right");
     }
-    public void turnleft() {
+    @Override
+    public void turnLeft() {
         System.out.println("Car is turning left");
     }
     @Override
