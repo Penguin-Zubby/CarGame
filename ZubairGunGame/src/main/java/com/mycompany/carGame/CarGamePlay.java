@@ -45,16 +45,22 @@ public class CarGamePlay {
         try (Scanner scanner = new Scanner(System.in)) {
             while(true) {
                 System.out.println("Enter 1 to accelerate. \n 2 to turn right. \n 3 to turn left \n 4 to reverse. \n 5 to brake: ");
-                int choice = scanner.nextInt();
+                String input = scanner.next();
                 
-                switch (choice) {
-                    case 1 -> car.accelerate();
-                    case 2 -> car.turnRight();
-                    case 3 -> car.turnLeft();
-                    case 4 -> car.reverse();
-                    case 5 -> car.brake();
-                    default -> System.out.println("Invalid Input!. \n Please pick from the listed options");
-                    
+                if (input.matches("\\d+")){
+                    int choice = Integer.parseInt(input);
+                    switch (choice) {
+                        case 1 -> car.accelerate();
+                        case 2 -> car.turnRight();
+                        case 3 -> car.turnLeft();
+                        case 4 -> car.reverse();
+                        case 5 -> car.brake();
+                        default -> System.out.println("Invalid Input!. \n Please pick from the listed options");
+                    }
+                }
+                else {
+                    System.out.println("Invalid Input!. \n Please enter a valid number.");
+                
                 }
             }
         }
