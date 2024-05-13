@@ -21,7 +21,6 @@ public class DriveState extends Car {
     public void turnRight() {
         System.out.println("Car is turning right");
     }
-    @Override
     public void turnleft() {
         System.out.println("Car is turning left");
     }
@@ -32,10 +31,6 @@ public class DriveState extends Car {
     @Override
     public void brake() {
         System.out.println("Applying brakes to slow down");
-    }
-
-    @Override
-    public void turnLeft() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        car.setCarState(new StopState(car));
     }
 }

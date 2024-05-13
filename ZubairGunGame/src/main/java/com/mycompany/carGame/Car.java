@@ -15,11 +15,7 @@ public abstract class Car {
     public abstract void reverse ();
     public abstract void brake ();
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        System.out.println("Welcome to Car game");
+    void setCarState(DriveState driveState) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 }

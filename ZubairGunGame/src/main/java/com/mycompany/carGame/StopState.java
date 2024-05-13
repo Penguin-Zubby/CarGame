@@ -8,15 +8,32 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
-public class StopState implements Car {
+public class StopState extends Car {
     private Car car;
     
     public StopState(Car car) {
         this.car = car;
     }
     
-    public void assemble() {
-        car.assemble();
+    @Override
+    public void accelerate() {
+        System.out.println("Starting car engine");
+        car.setCarState(new DriveState(car));
     }
-    
+    @Override
+    public void turnRight() {
+        System.out.println("Unable to turn while stopped.");
+    }
+    @Override
+    public void turnLeft() {
+        System.out.println("Unable to turn while stopped.");
+    }
+    @Override
+    public void reverse() {
+        System.out.println("now reversing.");
+    }
+    @Override
+    public void brake() {
+        System.out.println("Already stopped.");
+    }
 }

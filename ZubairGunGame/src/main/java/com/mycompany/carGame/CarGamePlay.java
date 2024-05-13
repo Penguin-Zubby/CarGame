@@ -8,13 +8,55 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
-public class CarGamePlay {
+import java.util.Scanner;
 
-    /**
-     * @param args the command line arguments
-     */
+public class CarGamePlay {
     public static void main(String[] args) {
-        // TODO code application logic here
+        Car car = new Car() {
+            private CarState carState = new StopState(this);
+            
+            //Setting up car states to carry out different methods when in that state
+            @Override
+            public void accelerate() {
+                carState.accelerate();
+            }
+            @Override
+            public void turnRight() {
+                carState.turnRight();
+            }
+            @Override
+            public void turnLeft() {
+                carState.turnLeft();
+            }
+            @Override
+            public void reverse() {
+                carState.reverse();
+            }
+            @Override
+            public void brake() {
+                carState.brake();
+            }
+            
+            public void setCarState(CarState carState) {
+                this.carState = carState;
+            }
+        };
+        Scanner scanner = new Scanner(System.in);
+        
+        while(true) {
+            System.out.println("Enter 1 to accelerate. \n 2 to turn right. \n 3 to turn left \n 4 to reverse. \n 5 to brake: ");
+            int choice = scanner.nextInt();
+            
+            switch (choice) {
+                case 1 -> car.accelerate();
+                case 2 -> car.turnRight();
+                case 3 -> car.turnLeft();
+                case 4 -> car.reverse();
+                case 5 -> car.brake();
+                default -> System.out.println("Invalid Input!. \n Please pick from the listed options");
+                    
+            }
+        }
+        scanner.close();
     }
-    
 }
