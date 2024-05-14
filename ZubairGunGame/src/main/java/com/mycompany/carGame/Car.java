@@ -33,4 +33,15 @@ public abstract class Car {
     public void brake(){
         carState.brake();
     }
+    private DrivingStr drivingStrategy;
+    
+    public Car(DrivingStr drivingStrategy){
+        this.drivingStrategy = drivingStrategy;
+    }
+    public void setDrivingStr(DrivingStr drivingStrategy) {
+        this.drivingStrategy = drivingStrategy;
+    }
+    public void drive() {
+        drivingStrategy.drive(this);
+    }
 }

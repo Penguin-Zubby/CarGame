@@ -44,7 +44,7 @@ public class CarGamePlay {
         };
         try (Scanner scanner = new Scanner(System.in)) {
             while(true) {
-                System.out.println("Enter 1 to accelerate. \n 2 to turn right. \n 3 to turn left \n 4 to reverse. \n 5 to brake: ");
+                System.out.println("\n Enter 1 to accelerate. \n 2 to turn right. \n 3 to turn left \n 4 to reverse. \n 5 to brake: ");
                 String input = scanner.next();
                 
                 if (input.matches("\\d+")){
@@ -55,11 +55,11 @@ public class CarGamePlay {
                         case 3 -> car.turnLeft();
                         case 4 -> car.reverse();
                         case 5 -> car.brake();
-                        default -> System.out.println("Invalid Input!. \n Please pick from the listed options");
+                        default -> System.out.println("\n Invalid Input!. \n Please pick from the listed options");
                     }
                 }
                 else {
-                    System.out.println("Invalid Input!. \n Please enter a valid number.");
+                    System.out.println("\n Invalid Input!. \n Please enter a valid number.");
                 
                 }
             }
