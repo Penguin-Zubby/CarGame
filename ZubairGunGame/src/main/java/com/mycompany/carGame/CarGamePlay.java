@@ -42,6 +42,11 @@ public class CarGamePlay {
                 this.carState = carState;
             }
         };
+        //Adding aggressive driving condition
+        AggressiveDriving aggressiveDriving = new AggressiveDriving();
+        DefensiveDriving defensiveDriving = new DefensiveDriving();
+        int counter = 0;
+        
         try (Scanner scanner = new Scanner(System.in)) {
             while(true) {
                 System.out.println("\n Enter 1 to accelerate. \n 2 to turn right. \n 3 to turn left \n 4 to reverse. \n 5 to brake: ");
@@ -50,7 +55,17 @@ public class CarGamePlay {
                 if (input.matches("\\d+")){
                     int choice = Integer.parseInt(input);
                     switch (choice) {
-                        case 1 -> car.accelerate();
+                        case 1 -> {
+                            car.accelerate();
+                            if (choice == 1) {
+                                counter++;
+                                if (counter > 3) {
+                                    aggressiveDriving.drive(car);
+                                    counter = 0; 
+                                    //resetting the counter after displaying warning message.
+                                }
+                            }
+                        }
                         case 2 -> car.turnRight();
                         case 3 -> car.turnLeft();
                         case 4 -> car.reverse();
