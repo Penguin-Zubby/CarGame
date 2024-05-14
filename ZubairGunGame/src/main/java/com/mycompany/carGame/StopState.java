@@ -8,13 +8,13 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
+//defining StopState class which extends from CarState
 public class StopState extends CarState {
-    
-    
+    //counstructor for StopState which also initializes superclass with the car object
     public StopState(Car car) {
         super(car);
     }
-    
+    //assigining messages with each method.
     @Override
     public void accelerate() {
         System.out.println("Starting car engine");

@@ -5,12 +5,13 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
+//defining DriveState class which extends from CarState
 public class DriveState extends CarState {
-    
+    //counstructor for DriveState which also initializes superclass with the car object
     public DriveState(Car car) {
         super(car);
     }
-    
+    //assigining messages with each method.
     @Override
     public void accelerate() {
         System.out.println("car is accelerating");
