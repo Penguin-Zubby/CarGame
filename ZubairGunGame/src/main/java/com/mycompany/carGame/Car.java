@@ -8,16 +8,19 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
+//Defining abstract class base class for all cars
 public abstract class Car {
     private CarState carState;
     
+    //constructor which initializes the car state to the StopState
     public Car() {
         this.carState = new StopState(this);
     }
+    //Implementing the current car state
     public void setCarState(CarState carState) {
         this.carState = carState;
     }
-    
+    //Assiging different methods to current carState
     public void accelerate(){
         carState.accelerate();
     }
@@ -33,14 +36,18 @@ public abstract class Car {
     public void brake(){
         carState.brake();
     }
+    // Linking or referencing the driving strategy for the car
     private DrivingStr drivingStrategy;
     
+    //Setting constructor to initialize the driving strategy
     public Car(DrivingStr drivingStrategy){
         this.drivingStrategy = drivingStrategy;
     }
+    //Sets the driving strategy for the car
     public void setDrivingStr(DrivingStr drivingStrategy) {
         this.drivingStrategy = drivingStrategy;
     }
+    //Assigning the drive method to driving strategy for the car
     public void drive() {
         drivingStrategy.drive(this);
     }
