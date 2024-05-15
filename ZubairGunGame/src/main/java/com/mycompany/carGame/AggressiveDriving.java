@@ -8,10 +8,10 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
+//creating a class for implementing aggressive driving strategy.
 public class AggressiveDriving implements DrivingStr{
     @Override
     public void drive(Car car) {
         System.out.println("\n Caution!!! You are driving aggressively, Please slow down. ");
     }
-    
 }

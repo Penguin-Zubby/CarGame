@@ -8,7 +8,7 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
+//Interface for different driving strategies that can be applied to a Car object.
 public interface DrivingStr {
-    void drive(Car car);
-    
+    void drive(Car car); 
 }
