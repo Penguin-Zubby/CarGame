@@ -8,6 +8,7 @@ package com.mycompany.carGame;
  *
  * @author zaina
  */
+//creating a class for implementing defencing driving strategy.
 public class DefensiveDriving implements DrivingStr{
     @Override
     public void drive(Car car) {
