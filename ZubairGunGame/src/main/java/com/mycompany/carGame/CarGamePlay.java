@@ -47,8 +47,9 @@ public class CarGamePlay {
         int counter = 0;
         
         try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("\n          !!!!Welcome to Car Game!!!!\n Please follow the instructions below to play");
             while(true) {
-                System.out.println("\n          !!!!Welcome to Car Game!!!!\n Please follow the instructions below to play");
+                
                 System.out.println("\n Enter 1 to accelerate. \n 2 to turn right. \n 3 to turn left \n 4 to reverse. \n 5 to brake: \n");
                 String input = scanner.next();
                 
